@@ -6,9 +6,12 @@
     "moduleResolution": "node",
     "paths": {
       "@/*": [
-        "src/*"
+        "packages/*"
       ]
     },
+    "types": [
+      "element-plus/global"
+    ],
     "lib": [
       "esnext",
       "dom",
