@@ -242,9 +242,7 @@ export default {
         color: rgba(223, 222, 222, 1);
     }
 }
-</style>
 
-<style lang="scss">
 .setting-popover {
     padding: 0 !important;
 }

@@ -1,4 +1,9 @@
 const { defineConfig } = require('@vue/cli-service')
+// const ElementPlus = require('unplugin-element-plus/webpack')
+// const AutoImport = require('unplugin-auto-import/webpack')
+// const Components = require('unplugin-vue-components/webpack')
+// const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
+
 const path = require('path')
 function resolve(dir) {
   return path.join(__dirname, dir)
@@ -13,6 +18,13 @@ module.exports = defineConfig({
       filename: 'index.html'
     }
   },
+  // css: {
+  //   loaderOptions: {
+  //     scss: {
+  //       additionalData: `@use "@/styles/index.scss" as *;`, // 按需引入样式
+  //     },
+  //   },
+  // },
   // 扩展 webpack 配置，使 packages 加入编译
   chainWebpack: config => {
     // 设置别名 alias
@@ -34,6 +46,22 @@ module.exports = defineConfig({
         .end()
       .use('babel')
         .loader('babel-loader')
+  },
+  configureWebpack: {
+    // externals: {
+    //   "vue": "vue"
+    // },
+    plugins: [
+      // AutoImport({
+      //   resolvers: [ElementPlusResolver()]
+      // }),
+      // Components({
+      //   resolvers: [ElementPlusResolver()]
+      // }),
+      // ElementPlus({
+      //   useSource: true
+      // })
+    ]
   },
   lintOnSave:false
 })

@@ -1,11 +1,11 @@
 
 <script>
-import { h, resolveComponent, createVNode, ref } from 'vue'
+import { h, resolveComponent, createVNode} from 'vue'
 import { ArrowDown } from '@element-plus/icons-vue'
 import PopConfirm from '../../PopConfirm'
 
 
-function DividerCommand(dropdownRef) {
+function DividerCommand() {
     return function (command, el) {
         console.log('对象', command, el)
     }
@@ -74,10 +74,10 @@ export default {
                     h(
                         resolveComponent('el-dropdown'),
                         {
-                            ref: '11',
                             placement: 'bottom',
-                            trigger: attrs.trigger || 'click',
-                            hideOnClick: false, // 是否点击菜单项隐藏
+                            trigger: attrs.trigger || 'hover',
+                            hideTimeout: 600,
+                            hideOnClick: attrs.hideOnClick || true, // 是否点击菜单项隐藏
                             onCommand: DividerCommand()
                         },
                         {
@@ -167,7 +167,9 @@ export default {
     cursor: pointer;
     color: #409EFF;
     display: block;
-    line-height: 25px;
+    line-height: 20px;
+    position: relative;
+    top: 5px;
 }
 
 .el-icon-arrow-down {

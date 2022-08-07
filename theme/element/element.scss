@@ -14,20 +14,14 @@ $padding-top-bottom-base: 16px;
 $input-height: 32px;
 $padding-24: 24px;
 
+:root {
+    --el-overlay-color-lighter: rgba(0,0,0,.4);
+}
 /* Button */
 .el-button {
+    --el-color-primary: #1890FF;
+    --el-border-radius-base: $boder-radius-base;
     margin-right: $margin-padding-distance;
-
-    &.el-button--text {
-        margin-right: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-    .el-button--text:focus,
-    .el-button--text:hover {
-        color: $bg-hover-color;
-    }
 
     &.el-button--default:hover,
     &.el-button--default:focus {
@@ -41,6 +35,23 @@ $padding-24: 24px;
         color: #FFF;
         background: $bg-hover-color;
         border-color: $bg-hover-color;
+    }
+
+    &.is-text,
+    &.is-link {
+        --el-fill-color: transparent;
+        --el-fill-color-light: transparent;
+        margin-right: 0;
+        padding: 0;
+        &:focus,
+        &:hover,
+        &:active {
+            color: $bg-hover-color;
+        }
+    }
+
+    span {
+        line-height: 21px;
     }
 }
 
@@ -126,19 +137,20 @@ $padding-24: 24px;
 
 
 /* Input */
+.el-input {
+    --el-border-radius-base: $boder-radius-base;
+}
 .el-input__inner {
     line-height: $input-height;
     height: $input-height;
-    padding-left: 11px;
-    padding-right: 20px;
     border-radius: $boder-radius-base;
 }
 
-.el-input__inner:focus,
-.el-input__inner:hover {
-    border-color: $bg-hover-color;
-    box-shadow: 0 0 0 1px rgb(24 144 255 / 20%);
-}
+// .el-input__inner:focus,
+// .el-input__inner:hover {
+//     border-color: $bg-hover-color;
+//     box-shadow: 0 0 0 1px rgba(24,144,255, 20%);
+// }
 
 .el-input__suffix {
     color: #52c41a;
@@ -163,6 +175,12 @@ $padding-24: 24px;
 }
 
 /* Date 控件 */
+.el-range-editor.el-input__wrapper {
+    padding: 0 10px;
+}
+.el-date-editor {
+    --el-border-radius-base: $boder-radius-base;
+}
 .el-date-editor .el-range-separator {
     display: flex;
     align-items: center;
@@ -203,6 +221,10 @@ $padding-24: 24px;
     text-align: right;
     padding: $padding-top-bottom-base 0 $padding-top-bottom-base  !important;
     margin-bottom: 0 !important;
+}
+
+.el-pagination__sizes {
+    margin-right: 0;
 }
 
 .el-pager li {
@@ -309,14 +331,18 @@ $padding-24: 24px;
 /* Tabs */
 
 /* Popconfirm */
-.el-popover {
+.el-popover.el-popper {
     min-width: 160px;
     padding: 12px 16px;
     border-radius: 2px;
     box-sizing: border-box;
-    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 15%);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
 
-    .el-button--mini {
+    .el-popconfirm__main {
+        padding-bottom: 5px;
+    }
+
+    .el-button--small {
         padding: 4px 4px 4px 7px;
         border-radius: 2px;
         font-size: 14px;

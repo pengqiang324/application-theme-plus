@@ -1,6 +1,5 @@
 <template>
     <div>
-        home
         <Search>
             <el-form :model="form" ref="searchForm">
                 <el-row>
@@ -81,7 +80,7 @@
                         </el-form-item>
                     </el-col>
                     <SearchController>
-                        <el-button type="primary">查询</el-button>
+                        <el-button type="primary" @click="handleClick">查询</el-button>
                         <el-button>重置</el-button>
                     </SearchController>
                 </el-row>
@@ -108,7 +107,7 @@
                 <el-table-column v-if="!filterLabel('操作')" label="操作" width="120px" fixed="right">
                     <template #default="scope">
                         <Divider :number="1">
-                            <el-button type="primary" link @click="linkDetail(scope.row)" v-if="true">查看
+                            <el-button type="primary" link @click="dialogVisible = true" v-if="true">查看
                             </el-button>
                             <el-button type="primary" link @confirm="linkDetail(scope.row)" v-if="true">删除
                             </el-button>
@@ -129,14 +128,33 @@
                 </template>
             </Pagination>
         </Content>
+        <!-- <BaseSetting title="heloe"><span>不错</span></BaseSetting> -->
+        <!-- dialog -->
+        <el-dialog
+            v-model="dialogVisible"
+            title="Tips"
+            width="30%"
+        >
+            <span>{{ title }}</span>
+            <template #footer>
+            <span class="dialog-footer">
+                <el-button @click="dialogVisible = false">Cancel</el-button>
+                <el-button type="primary" @click="handleTitle"
+                >Confirm</el-button
+                >
+            </span>
+            </template>
+        </el-dialog>
     </div>
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, getCurrentInstance, defineComponent } from 'vue'
 import baseMixin from '../mixins'
+import { hello } from '../store/modules/hello.js'
+import { mapActions, mapState } from 'pinia'
 
-export default {
+export default defineComponent({
     name: 'm-home',
 
     data() {
@@ -167,11 +185,17 @@ export default {
             },
             total: 100,
             page: 1,
-            pageSize: 10
+            pageSize: 10,
+            dialogVisible: false
         }
     },
 
+    computed: {
+        ...mapState(hello, ['title'])
+    },
+
     setup() {
+        const This = getCurrentInstance().appContext.config.globalProperties
         const loading = ref(true)
         const { tableRef, checkChange, filterLabel } = baseMixin()
         const tableData = ref([
@@ -180,16 +204,16 @@ export default {
                 name: 'Tom',
                 address: 'No. 189, Grove St, Los Angeles',
             },
-            // {
-            //     date: '2016-05-02',
-            //     name: 'Tom',
-            //     address: 'No. 189, Grove St, Los Angeles',
-            // },
-            // {
-            //     date: '2016-05-04',
-            //     name: 'Tom',
-            //     address: 'No. 189, Grove St, Los Angeles',
-            // },
+            {
+                date: '2016-05-02',
+                name: 'Tom',
+                address: 'No. 189, Grove St, Los Angeles',
+            },
+            {
+                date: '2016-05-04',
+                name: 'Tom',
+                address: 'No. 189, Grove St, Los Angeles',
+            },
             // {
             //     date: '2016-05-01',
             //     name: 'Tom',
@@ -210,6 +234,17 @@ export default {
             console.log('数据', scope)
         }
 
+        const handleClick = () => {
+             This.$message({
+                message: 'Congrats, this is a success message.',
+                type: 'success',
+            })
+        }
+
+        const helloStore = hello()
+
+        helloStore.$patch({ title: 'gogo' })
+        console.log('store', helloStore)
         return {
             loading,
             tableData,
@@ -217,11 +252,13 @@ export default {
             filterLabel,
             checkChange,
             handleConfirm,
-            linkDetail
+            linkDetail,
+            handleClick
         }
     },
 
     methods: {
+        ...mapActions(hello, ['setTitle']),
         refresh() {
             console.log('刷新')
         },
@@ -230,9 +267,14 @@ export default {
         },
         handleSizeChange(size) {
             console.log('改变l', size)
+        },
+        handleTitle() {
+            this.setTitle('设置成功了')
+            // console.log(this.setTitle)
+            this.dialogVisible = false
         }
     }
-}
+})
 </script>
 
 <style>

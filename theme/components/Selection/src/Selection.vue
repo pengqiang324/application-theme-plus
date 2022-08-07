@@ -4,7 +4,7 @@
             <template #title>
                 <div>
                     <label class="selection-text">已选择:&nbsp;<span class="selection-text-number">{{ number }}</span></label>
-                    <el-button v-show="number" type="primary" link @click="clearEmpty" style="margin-left: 24px;">清空</el-button>
+                    <el-button v-show="number" type="primary" link @click="clearEmpty" style="margin-left: 24px;height: 20px;">清空</el-button>
                 </div>
             </template>
         </el-alert>
@@ -44,6 +44,7 @@ export default {
     }
 
     .el-alert__title {
+        display: block;
         font-size: 14px;
         color: rgba(0, 0, 0, .85);
     }
@@ -51,6 +52,7 @@ export default {
     .selection-text-number {
         color: #1890FF;
         font-weight: 500;
+        vertical-align: text-bottom;
     }
 }
 </style>
