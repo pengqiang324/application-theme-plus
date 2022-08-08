@@ -28,10 +28,12 @@ export default {
 </script>
 
 <style lang="scss">
+
+
 .search-box {
-    margin-bottom: 10px;
-    padding: 24px 0 0;
-    background: #fff;
+    margin-bottom: 10px !important;
+    padding: 24px 0 0 !important;
+    background: #fff !important;
 
     .el-date-editor--datetimerange.el-input,
     .el-date-editor--daterange.el-input__inner,
