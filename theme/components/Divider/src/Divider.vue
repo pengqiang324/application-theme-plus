@@ -169,7 +169,7 @@ export default {
     display: block;
     line-height: 20px;
     position: relative;
-    top: 5px;
+    top: 6px;
 }
 
 .el-icon-arrow-down {

@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { getCurrentInstance } from 'vue'
 import { ArrowDown, ArrowUp } from '@element-plus/icons-vue'
 export default {
     name: 'SearchController',
@@ -70,7 +71,7 @@ export default {
     methods: {
         initData() {
             if (this.expand) {
-                // 默认展开 expand 由 全局 Vue.prototype 挂载属性
+                // 默认展开 expand 由 全局 app.config.globalProperties 挂载属性
                 this.spanCol = 24
                 this.toolText = '收起'
                 this.needOpenStatus = true

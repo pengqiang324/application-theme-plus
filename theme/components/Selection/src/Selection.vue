@@ -52,7 +52,6 @@ export default {
     .selection-text-number {
         color: #1890FF;
         font-weight: 500;
-        vertical-align: text-bottom;
     }
 }
 </style>

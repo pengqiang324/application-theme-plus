@@ -8,10 +8,9 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import mBaseUI from '../packages/index'
 // import '@/styles/element/index.scss'
 import 'element-plus/dist/index.css'
-import '../theme/element/element.scss'
  
 const app = createApp(App)
-app.use(mBaseUI)
+app.use(mBaseUI, { expand: false })
 app.use(router)
 app.use(store)
 app.use(ElementPlus, { locale: zhCn }) // 中文
