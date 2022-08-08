@@ -230,7 +230,7 @@ $padding-24: 24px;
     margin: 0;
     line-height: 24px;
 
-    &.active {
+    &.is-active {
         border: 1px solid $bg-hover-color;
         border-radius: 2px;
     }
