@@ -131,7 +131,9 @@ export default {
         
         return () => h(
             'div',
-            null,
+            {
+                style: 'display: flex; align-items: center;'
+            },
             {
                 default: () => renderDOM
             }
@@ -168,8 +170,6 @@ export default {
     color: #409EFF;
     display: block;
     line-height: 20px;
-    position: relative;
-    top: 1px;
 }
 
 .el-icon-arrow-down {
