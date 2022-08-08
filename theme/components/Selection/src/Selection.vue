@@ -41,6 +41,8 @@ export default {
 
     .selection-text {
         margin-right: 12px;
+        position: relative;
+        top: 1px;
     }
 
     .el-alert__title {

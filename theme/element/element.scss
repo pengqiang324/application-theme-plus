@@ -43,15 +43,12 @@ $padding-24: 24px;
         --el-fill-color-light: transparent;
         margin-right: 0;
         padding: 0;
+        height: 20px;
         &:focus,
         &:hover,
         &:active {
             color: $bg-hover-color;
         }
-    }
-
-    span {
-        line-height: 21px;
     }
 }
 
