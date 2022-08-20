@@ -43,7 +43,8 @@ $padding-24: 24px;
         --el-fill-color-light: transparent;
         margin-right: 0;
         padding: 0;
-        height: 20px;
+        line-height: 20px;
+        white-space: normal;
         &:focus,
         &:hover,
         &:active {
