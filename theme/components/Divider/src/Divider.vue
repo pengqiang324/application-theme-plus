@@ -1,20 +1,20 @@
 
 <script>
-import { h, resolveComponent, createVNode} from 'vue'
+import { h, resolveComponent, createVNode, ref } from 'vue'
 import { ArrowDown } from '@element-plus/icons-vue'
 import PopConfirm from '../../PopConfirm'
 
-
-function DividerCommand() {
+function DividerCommand(_this) {
     return function (command, el) {
-        console.log('对象', command, el)
+        // console.log('对象', command, el, _this.hideOnClick)
     }
 }
 
 function handleDelOption(dom, attrs, isMore = false) {
     let children = null
     const vNode = typeof dom.children === 'object' && dom.children.default() || []
-    if (vNode[0] && vNode[0].children.trim() === '删除' || attrs.poptitle) {
+    if (vNode[0] && dom.props.poptitle) {
+        // 当使用了 popConfirm 组件需搭配 hideOnClick attrs共同使用，否则会出现 popConfirm 组件错位问题
         children = 
             h(PopConfirm, {
                 isMore: isMore,
@@ -24,10 +24,10 @@ function handleDelOption(dom, attrs, isMore = false) {
                 default: () => vNode
             })
     } else {
-        children =
+        children = 
             h(
                 isMore ? 'span' : resolveComponent('el-button'),
-                { 
+                {
                     class: { 'table-button': !isMore }, 
                     ...dom.props
                 },
@@ -35,6 +35,7 @@ function handleDelOption(dom, attrs, isMore = false) {
                     default: () => vNode
                 }
             )
+        children.dirs = dom.dirs // directives 指令
     }
     return children
 }
@@ -46,20 +47,26 @@ export default {
         'PopConfirm': PopConfirm
     },
 
-    setup(props, { attrs, slots}) {
-        const Children = slots.default().filter((item) => {
+    setup() {
+        const hideOnClick = ref(true)
+
+        return {
+            hideOnClick
+        }
+    },
+
+    render() {
+        const { $slots, $attrs } = this
+        const _this = this
+        const Children = $slots.default().filter((item) => {
             if (item.children == null) return false
             // 判断是否为指令 v-if
             if (typeof item.children === 'string' && item.children === 'v-if') return false
-            // 判断是否为指令 v-show 需加 modifiers 标识 on
-            if (item.dirs) {
-                return !item.dirs.some(dir => dir.arg === 'on')
-            }
             return true
         })
         // 创建默认操作选项
         const createDefaultVDOM = function (dom, index) {
-            const children = handleDelOption(dom, attrs)
+            const children = handleDelOption(dom, $attrs)
             return (
                 [
                     children,
@@ -75,10 +82,9 @@ export default {
                         resolveComponent('el-dropdown'),
                         {
                             placement: 'bottom',
-                            trigger: attrs.trigger || 'hover',
-                            hideTimeout: 600,
-                            hideOnClick: attrs.hideOnClick || true, // 是否点击菜单项隐藏
-                            onCommand: DividerCommand()
+                            trigger: $attrs.trigger || 'hover',
+                            hideOnClick: $attrs.hideOnClick == null ? true : $attrs.hideOnClick, // 是否点击菜单项隐藏 hideOnclick 需跟 popConfirm 配合使用
+                            onCommand: DividerCommand(_this)
                         },
                         {
                             default: () => h(
@@ -93,7 +99,7 @@ export default {
                                 null,
                                 {
                                     default: () => haveMoreChildren.map(children => {
-                                        const Children = handleDelOption(children, attrs, true)
+                                        const Children = handleDelOption(children, $attrs, true)
                                         return h(
                                             resolveComponent('el-dropdown-item'),
                                             null,
@@ -110,7 +116,7 @@ export default {
             )
         }
         let renderDOM = null
-        let Number = attrs.number || 2
+        let Number = $attrs.number || 2
         const childLen = Children.length
         if (childLen <= Number) {
             renderDOM = Children.map((dom, index) => {
@@ -128,17 +134,17 @@ export default {
                 }
             })
         }
-        
-        return () => h(
+
+        return h(
             'div',
             {
-                style: 'display: flex; align-items: center;'
+                style: 'display: flex; align-items: center;',
             },
             {
                 default: () => renderDOM
             }
         )
-    },
+    }
 }
 </script>
 

@@ -231,7 +231,7 @@ export default {
     padding: 4px 0 4px 3px;
 
     .setting-checkbox-option {
-        padding: 5px 16px 5px 4px;
+        padding: 0px 16px 0px 4px;
         display: flex;
         align-items: center;
     }

@@ -106,12 +106,12 @@
                 <el-table-column v-if="!filterLabel('地址')" prop="address" label="地址" />
                 <el-table-column v-if="!filterLabel('操作')" label="操作" width="120px" fixed="right">
                     <template #default="scope">
-                        <Divider :number="1">
-                            <el-button type="primary" link @click="dialogVisible = true" v-if="true">查看
+                        <Divider :number="1" trigger="click" :hideOnClick="false">
+                            <el-button type="primary" v-show="true" link @click="handlerClick(scope.row)">查看
                             </el-button>
-                            <el-button type="primary" link @confirm="linkDetail(scope.row)" v-if="true">删除
+                            <el-button type="primary" link @confirm="linkDetail(scope.row)" poptitle="确认删除吗？">删除
                             </el-button>
-                            <el-button type="primary" link @click="linkDetail(scope.row)" v-if="true">编辑
+                            <el-button type="primary" link @click="linkDetail(scope.row)">编辑
                             </el-button>
                         </Divider>
                     </template>
@@ -122,8 +122,8 @@
             </el-table>
             <Pagination :total="total" :current="page" :page-size="pageSize">
                 <template #default="data">
-                    <el-pagination :page-sizes="data.sizes" :layout="data.layout" @current-change="handlePageChange"
-                        @size-change="handleSizeChange" v-model:currentPage="page" :page-size="pageSize" :total="total">
+                    <el-pagination :page-sizes="data.sizes" :layout="data.layout" @update:current-page="handlePageChange"
+                        @update:page-size="handleSizeChange" v-model:currentPage="page" :page-size="pageSize" :total="total">
                     </el-pagination>
                 </template>
             </Pagination>
@@ -200,16 +200,19 @@ export default defineComponent({
         const { tableRef, checkChange, filterLabel } = baseMixin()
         const tableData = ref([
             {
+                status: 0,
                 date: '2016-05-03',
                 name: 'Tom',
                 address: 'No. 189, Grove St, Los Angeles',
             },
             {
+                status: 0,
                 date: '2016-05-02',
                 name: 'Tom',
                 address: 'No. 189, Grove St, Los Angeles',
             },
             {
+                status: 0,
                 date: '2016-05-04',
                 name: 'Tom',
                 address: 'No. 189, Grove St, Los Angeles',
@@ -230,8 +233,13 @@ export default defineComponent({
             console.log('确认了')
         }
 
+        const handlerClick = (data) => {
+            data.status = 1
+        }
+
         const linkDetail = (scope) => {
             console.log('数据', scope)
+            // scope.row.status = 1
         }
 
         const handleClick = () => {
@@ -253,7 +261,9 @@ export default defineComponent({
             checkChange,
             handleConfirm,
             linkDetail,
-            handleClick
+            handleClick,
+            handlerClick
+            
         }
     },
 
