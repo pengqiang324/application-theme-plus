@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { getCurrentInstance } from 'vue'
+import { nextTick } from 'vue'
 import { ArrowDown, ArrowUp } from '@element-plus/icons-vue'
 export default {
     name: 'SearchController',
@@ -79,16 +79,19 @@ export default {
         },
 
         computeCol() {
-            const oBox = document.querySelectorAll('.search-box')[this.index]
-            const oCol = oBox.querySelectorAll('.el-col')
-            this.parentDOM = oBox.querySelector('.el-row')
-            this.inputList = oCol
-            if (oCol.length >= 4) {
-                this.isOpen = true
-                this.setDisplay(oCol, this.expand ? 'block' : 'none')
-            } else {
-                this.isOpen = false
-            }
+            // 延迟加载，保证dom渲染成功
+            setTimeout(() => {
+                const oBox = document.querySelectorAll('.search-box')[this.index]
+                const oCol = oBox.querySelectorAll('.el-col')
+                this.parentDOM = oBox.querySelector('.el-row')
+                this.inputList = oCol
+                if (oCol.length >= 4) {
+                    this.isOpen = true
+                    this.setDisplay(oCol, this.expand ? 'block' : 'none')
+                } else {
+                    this.isOpen = false
+                }
+            }, 320)
         },
         handleOpen() {
             if (this.needOpenStatus) {

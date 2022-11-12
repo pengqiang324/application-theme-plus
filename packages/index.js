@@ -1,4 +1,5 @@
-const version = "1.1.2"
+const version = "1.1.5"
+// const modulesFiles = import.meta.globEager('../theme/components/**/*.js')
 const modulesFiles = require.context('../theme/components', true, /\.js$/)
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，那么所有的组件都会被注册
 import '../theme/element/index.scss'
@@ -6,6 +7,12 @@ const install = (Vue, options) => {
   // 判断是否安装
   if (install.installed) return
   // 注册组件
+  // for (const key in modulesFiles) {
+  //   if (Object.prototype.hasOwnProperty.call(modulesFiles, key)) {
+  //     const component = modulesFiles[key].default
+  //     Vue.component(component.name, component)
+  //   }
+  // }
   modulesFiles.keys().map((componentPath) => {
     const component = modulesFiles(componentPath).default
     Vue.component(component.name, component)
