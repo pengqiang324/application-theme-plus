@@ -43,7 +43,7 @@
                                         @change="handleCheckAllChange">列展示</el-checkbox>
                                     <el-button type="primary" link @click="handleReset">重置</el-button>
                                 </div>
-                                <el-checkbox-group v-model="checkList" @change="handleCheckedChange" class="setting-checkbox--box">
+                                <el-checkbox-group v-model="checkList" @change="handleCheckedChange" :class="['setting-checkbox--box', { 'setting-checkbox--box_on': expand }]">
                                     <div class="setting-checkbox-group">
                                         <div v-for="item in tableHeadList" :key="item" class="setting-checkbox-option">
                                             <el-icon size="13px" color="#dfdede" class="custom-tooltip"
@@ -282,6 +282,9 @@ export default {
 .setting-checkbox--box {
     max-height: 475px;
     overflow-y: auto;
+    &_on {
+        max-height: 360px;
+    }
 }
 
 .setting-checkbox-group {
