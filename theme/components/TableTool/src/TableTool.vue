@@ -31,19 +31,19 @@
                 </el-tooltip>
                 <el-tooltip v-if="showSetting" effect="dark" content="列设置" placement="top">
                     <span>
-                        <el-popover  trigger="click" popper-class="setting-popover">
+                        <el-popover :visible="visible" trigger="click" popper-class="setting-popover">
                             <template #reference>
-                                <el-icon size="20px" color="#333" class="custom-tooltip">
+                                <el-icon size="20px" color="#333" class="custom-tooltip" @click.stop="visible = !visible">
                                     <Setting />
                                 </el-icon>
                             </template>
-                            <div class="setting-checkbox-list">
+                            <div class="setting-checkbox-list" @click.stop>
                                 <div class="setting-checkbox-top">
                                     <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll"
                                         @change="handleCheckAllChange">列展示</el-checkbox>
                                     <el-button type="primary" link @click="handleReset">重置</el-button>
                                 </div>
-                                <el-checkbox-group v-model="checkList" @change="handleCheckedChange">
+                                <el-checkbox-group v-model="checkList" @change="handleCheckedChange" class="setting-checkbox--box">
                                     <div class="setting-checkbox-group">
                                         <div v-for="item in tableHeadList" :key="item" class="setting-checkbox-option">
                                             <el-icon size="13px" color="#dfdede" class="custom-tooltip"
@@ -64,8 +64,9 @@
 </template>
 
 <script>
-import { inject } from 'vue'
+import { inject, watch } from 'vue'
 import { RefreshRight, Monitor, QuestionFilled, Setting, Menu } from '@element-plus/icons-vue'
+
 export default {
     name: 'TableTool',
 
@@ -96,17 +97,36 @@ export default {
         queryDom: {
             type: String,
             default: 'body'
+        },
+
+        updateTool: {
+            type: Boolean
         }
     },
 
     data() {
         return {
             isIndeterminate: false,
+            visible: false,
             checkAll: true,
             checkList: [],
             tableHeadList: [],
             thList: [],
             diffLabels: []
+        }
+    },
+
+    watch: {
+        updateTool: {
+            handler(val) {
+                if (this.showSetting) {
+                    this.isIndeterminate = false
+                    this.checkAll = true
+                    this.tableHeadList = [] // 重置选项
+                    this.getCheckList()
+                }
+            },
+            immediate: false
         }
     },
 
@@ -123,14 +143,24 @@ export default {
         }
     },
 
-    methods: {
+    activated() {
+        document.addEventListener('click', this.handleClick)
+    },
 
+    deactivated() {
+        // 销毁 tool
+        this.visible = false
+        document.removeEventListener('click', this.handleClick)
+    },
+
+    methods: {
         getCheckList() {
             setTimeout(() => {
                 const queryDom = (this.queryDom === 'body' || this.queryDom.startsWith('.')) ? this.queryDom : `.${this.queryDom}`
                 const oHeader = document.querySelector(`${queryDom} .el-table__header`)
                 const oTableTH = oHeader.getElementsByClassName('is-leaf')
                 const transformDomArr = [...oTableTH]
+                
                 transformDomArr.forEach(dom => {
                     const thChildren = dom.children[0]
                     const labelChildren = thChildren.children[0]
@@ -146,6 +176,10 @@ export default {
 
         refreshData() {
             this.$emit('refresh') // 刷新表格数据
+        },
+
+        handleClick() {
+            this.visible = false
         },
 
         handleCommand(command) {
@@ -225,6 +259,29 @@ export default {
         padding: 10px 16px 10px 26px;
         border-bottom: 1px solid #e8e8e8;
     }
+    ::-webkit-scrollbar {
+        /*滚动条整体样式*/
+        width: 8px;
+        /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        /*滚动条里面小方块*/
+        box-shadow: inset 0 0 5px rgba(97, 184, 179, 0.1);
+        background: #ccc;
+    }
+
+    ::-webkit-scrollbar-track {
+        /*滚动条里面轨道*/
+        box-shadow: inset 0 0 5px rgba(87, 175, 187, 0.1);
+        background: #ededed;
+    }
+}
+
+.setting-checkbox--box {
+    max-height: 475px;
+    overflow-y: auto;
 }
 
 .setting-checkbox-group {
