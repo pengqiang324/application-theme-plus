@@ -1,7 +1,7 @@
 import '../theme/element/index.scss'
 import Spin from '../theme/components/Spin'
 
-const version = "1.1.9"
+const version = "1.2.0"
 // const modulesFiles = import.meta.globEager('../theme/components/**/*.js')
 const modulesFiles = require.context('../theme/components', true, /\.js$/)
 
