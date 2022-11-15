@@ -12,7 +12,17 @@ function DividerCommand(_this) {
 
 function handleDelOption(dom, attrs, isMore = false) {
     let children = null
+    // if (
+    //     typeof dom.type === 'symbol' && 
+    //     dom.type.toString().includes('Fragment') // Fragment类型
+    // ) {
+    //     children = dom.children.filter((item) => {
+    //         return judgmentType(item)
+    //     }).map((child) => handleDelOption(child, attrs))
+    //     return children
+    // }
     const vNode = typeof dom.children === 'object' && dom.children.default() || []
+    if (!vNode[0]) return
     if (vNode[0] && dom.props.poptitle) {
         // 当使用了 popConfirm 组件需搭配 hideOnClick attrs共同使用，否则会出现 popConfirm 组件错位问题
         children = 
@@ -39,6 +49,31 @@ function handleDelOption(dom, attrs, isMore = false) {
     }
     return children
 }
+
+// 判断节点类型
+function judgmentType(item) {
+    if (
+        typeof item.type === 'symbol' &&
+        item.type.toString().includes('Comment') // v-if、 注释节点
+    ) return false
+    if (
+        typeof item.type === 'string' ||
+        (typeof item.type === 'symbol' &&
+            item.type.toString().includes('Text'))
+    ) {
+        console.warn('<Divider> Only <el-button> is allowed.')
+        return false
+    }
+    if (
+        typeof item.type === 'symbol' &&
+        item.type.toString().includes('Fragment') // Fragment类型
+    ) {
+        console.warn('Wrapping child elements in <template> tags is not supported at this time')
+        return false
+    }
+    return true
+}
+
 export default {
     // eslint-disable-next-line vue/multi-word-component-names
     name: 'Divider',
@@ -59,14 +94,12 @@ export default {
         const { $slots, $attrs } = this
         const _this = this
         const Children = $slots.default().filter((item) => {
-            if (item.children == null) return false
-            // 判断是否为指令 v-if
-            if (typeof item.children === 'string' && item.children === 'v-if') return false
-            return true
+            return judgmentType(item)
         })
         // 创建默认操作选项
         const createDefaultVDOM = function (dom, index) {
             const children = handleDelOption(dom, $attrs)
+            if (!children) return
             return (
                 [
                     children,
