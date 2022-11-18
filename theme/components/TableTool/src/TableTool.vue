@@ -4,12 +4,12 @@
         <div class="tool-right">
             <slot name="tool"></slot>
             <div class="tool-icon">
-                <el-tooltip effect="dark" content="刷新" placement="top">
+                <el-tooltip effect="dark" content="刷新" :placement="placement">
                     <el-icon @click="refreshData" size="20px" color="#333" class="custom-tooltip">
                         <RefreshRight />
                     </el-icon>
                 </el-tooltip>
-                <el-tooltip v-if="showRefresh" effect="dark" content="应用管理" placement="top">
+                <el-tooltip v-if="showRefresh" effect="dark" content="应用管理" :placement="placement">
                     <el-dropdown placement="bottom" @command="handleCommand" trigger="click">
                         <el-icon size="20px" color="#333" class="custom-tooltip">
                             <Monitor />
@@ -21,7 +21,7 @@
                         </template>
                     </el-dropdown>
                 </el-tooltip>
-                <el-tooltip v-if="showInfo" effect="dark" placement="top">
+                <el-tooltip v-if="showInfo" effect="dark" :placement="placement">
                     <el-icon size="20px" color="#333" class="custom-tooltip">
                         <QuestionFilled />
                     </el-icon>
@@ -29,7 +29,7 @@
                         <slot name="info"></slot>
                     </template>
                 </el-tooltip>
-                <el-tooltip v-if="showSetting" effect="dark" content="列设置" placement="top">
+                <el-tooltip v-if="showSetting" effect="dark" content="列设置" :placement="placement">
                     <span>
                         <el-popover :visible="visible" trigger="click" popper-class="setting-popover">
                             <template #reference>
@@ -101,6 +101,11 @@ export default {
 
         updateTool: {
             type: Boolean
+        },
+
+        placement: {
+            type: String,
+            default: 'top'
         }
     },
 
