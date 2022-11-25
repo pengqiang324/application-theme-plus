@@ -91,7 +91,7 @@ export default {
                 } else {
                     this.isOpen = false
                 }
-            }, 320)
+            }, 500)
         },
         handleOpen() {
             if (this.needOpenStatus) {
