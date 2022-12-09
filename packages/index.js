@@ -1,7 +1,21 @@
 import '../theme/element/index.scss'
-import Spin from '../theme/components/Spin'
+import {
+  Spin,
+  BaseSetting,
+  Content,
+  DefaultEmpty,
+  Divider,
+  FormItem,
+  Pagination,
+  PopConfirm,
+  Search,
+  SearchController,
+  Selection,
+  TableTool
+} from '../theme/utils'
 
-const version = "1.2.5"
+
+const version = "1.2.6"
 // const modulesFiles = import.meta.globEager('../theme/components/**/*.js')
 const modulesFiles = require.context('../theme/components', true, /\.js$/)
 
@@ -20,7 +34,7 @@ const install = (Vue, options) => {
     const component = modulesFiles(componentPath).default
     Vue.component(component.name, component)
   })
-  // // 判断注册参数是否为正确参数
+  // 判断注册参数是否为正确参数
   if (
       Object.prototype.toString.call(options) === '[object Object]' &&
       Object.keys(options).length
@@ -36,7 +50,18 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export {
-  Spin
+  Spin,
+  BaseSetting,
+  Content,
+  DefaultEmpty,
+  Divider,
+  FormItem,
+  Pagination,
+  PopConfirm,
+  Search,
+  SearchController,
+  Selection,
+  TableTool
 }
  
 export default {
