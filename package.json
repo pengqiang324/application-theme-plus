@@ -11,6 +11,7 @@
     "lib": "vue-cli-service build  --target lib --name theme-plus --dest lib packages/index.js",
     "prepare": "husky install",
     "cz": "git add . && git-cz",
+    "release": "release-it",
     "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0 -n ./changelog-option.js"
   },
   "dependencies": {
@@ -41,6 +42,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "node-sass": "^7.0.1",
+    "release-it": "^15.11.0",
     "sass-loader": "^13.0.2",
     "unplugin-auto-import": "^0.11.1",
     "unplugin-element-plus": "^0.4.1",
