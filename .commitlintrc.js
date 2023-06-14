@@ -75,7 +75,7 @@ module.exports = {
     allowBreakingChanges: ["feat", "fix"],
     breaklineNumber: 100,
     breaklineChar: "|",
-    skipQuestions: ["body", "breaking", "footer"],
+    skipQuestions: ["body", "breaking"],
     issuePrefixs: [{ value: "closed", name: "closed:   问题已经被修复" }],
     customIssuePrefixsAlign: "top",
     emptyIssuePrefixsAlias: "skip",
