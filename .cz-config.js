@@ -24,30 +24,6 @@ module.exports = {
       value: ":lipstick: style",
       name: "💄 style:    代码的样式美化",
     },
-    {
-      value: ":recycle: refactor",
-      name: "♻️  refactor: 重构",
-    },
-    {
-      value: ":pencil2: docs",
-      name: "✏️  docs:     文档变更",
-    },
-    {
-      value: ":white_check_mark: test",
-      name: "✅ test:     测试",
-    },
-    {
-      value: ":rewind: revert",
-      name: "⏪️ revert:   回退",
-    },
-    {
-      value: ":rocket: chore",
-      name: "🚀 chore:    构建/工程依赖/工具",
-    },
-    {
-      value: ":construction_worker: ci",
-      name: "👷 ci:       CI related changes",
-    },
   ],
   messages: {
     type: "请选择提交类型(必填)",
