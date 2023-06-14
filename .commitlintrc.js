@@ -1,4 +1,5 @@
-// 具体配置可参考https://commitlint.js.org/#/reference-rules自行配置不做详细说明
+// .commitlintrc.js
+/** @type {import('cz-git').UserConfig} */
 module.exports = {
   ignores: [(commit) => commit.includes("init")],
   extends: ["@commitlint/config-conventional"],
@@ -40,37 +41,27 @@ module.exports = {
       confirmCommit: "是否提交或修改commit ?",
     },
     types: [
-      { value: "feat: 特性", name: "特性:   🚀  新增功能", emoji: "🚀" },
-      { value: "fix: 修复", name: "修复:   🧩  修复缺陷", emoji: "🧩" },
-      { value: "docs: 文档", name: "文档:   📚  文档变更", emoji: "📚" },
+      { value: "feat", name: "feat:   🚀  新增功能", emoji: "🚀" },
+      { value: "fix", name: "fix:   🧩  修复缺陷", emoji: "🧩" },
+      { value: "docs", name: "docs:   📚  文档变更", emoji: "📚" },
       {
-        value: "style: 格式",
-        name: "格式:   🎨  代码格式（不影响功能，例如空格、分号等格式修正）",
+        value: "style",
+        name: "style:   🎨  代码格式（不影响功能，例如空格、分号等格式修正）",
         emoji: "🎨",
       },
       {
-        value: "refactor: 重构",
-        name: "重构:   ♻️  代码重构（不包括 bug 修复、功能新增）",
+        value: "refactor",
+        name: "refactor:   ♻️  代码重构（不包括 bug 修复、功能新增）",
         emoji: "♻️",
       },
-      { value: "perf: 性能", name: "性能:   ⚡️  性能优化", emoji: "⚡️" },
+      { value: "perf", name: "perf:   ⚡️  性能优化", emoji: "⚡️" },
       {
-        value: "test: 测试",
-        name: "测试:   ✅  添加疏漏测试或已有测试改动",
+        value: "test",
+        name: "test:   ✅  添加疏漏测试或已有测试改动",
         emoji: "✅",
       },
-      {
-        value: "chore: 构建",
-        name: "构建:   📦️  构建流程、外部依赖变更（如升级 npm 包、修改 webpack 配置等）",
-        emoji: "📦️",
-      },
-      {
-        value: "ci: 集成",
-        name: "集成:   🎡  修改 CI 配置、脚本",
-        emoji: "🎡",
-      },
-      { value: "revert: 回退", name: "回退:   ⏪️  回滚 commit", emoji: "⏪️" },
-      { value: "build: 打包", name: "打包:   🔨  项目打包发布", emoji: "🔨" },
+      { value: "revert", name: "revert:   ⏪️  回滚 commit", emoji: "⏪️" },
+      { value: "build", name: "build:   🔨  项目打包发布", emoji: "🔨" },
     ],
     useEmoji: true,
     themeColorCode: "",
