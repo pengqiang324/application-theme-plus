@@ -65,7 +65,7 @@ module.exports = {
     ],
     useEmoji: true,
     themeColorCode: "",
-    scopes: [],
+    scopes: ["custom1", "custom2"],
     allowCustomScopes: true,
     allowEmptyScopes: false,
     customScopesAlign: "bottom",
