@@ -10,7 +10,8 @@
     "style": "npx sass --style compressed theme/element/element.scss theme/element.css",
     "lib": "vue-cli-service build  --target lib --name theme-plus --dest lib packages/index.js",
     "prepare": "husky install",
-    "cz": "git add . && git-cz"
+    "cz": "git add . && git-cz",
+    "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0 -n ./changelog-option.js"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.6",
@@ -30,12 +31,15 @@
     "commitizen": "^4.3.0",
     "commitlint-config-cz": "^0.13.3",
     "commitlint-config-gitmoji": "^2.3.1",
+    "conventional-changelog": "^4.0.0",
+    "conventional-changelog-cli": "^3.0.0",
+    "conventional-changelog-custom-config": "^0.3.1",
     "cz-customizable": "^7.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "extract-text-webpack-plugin": "^3.0.2",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
-    "extract-text-webpack-plugin": "^3.0.2",
     "node-sass": "^7.0.1",
     "sass-loader": "^13.0.2",
     "unplugin-auto-import": "^0.11.1",
@@ -56,6 +60,12 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "changelog": {
+    "bugsUrl": "https://github.com/pengqiang324/application-theme-plus/issues/",
+    "emojis": true,
+    "authorName": true,
+    "authorEmail": true
   },
   "eslintConfig": {
     "root": true,
