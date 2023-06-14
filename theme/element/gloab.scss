@@ -1,0 +1,32 @@
+body{
+  background: #F0F3F7;
+  height:100%;
+}
+.animated {animation-duration: 0.3s;animation-fill-mode: both;}
+*{
+  box-sizing: border-box;
+}
+.search-box{
+  padding: 20px 20px 0 20px;
+}
+.el-table thead tr th{
+  background: #F0F3F7 !important;
+}
+
+.el-message-box .el-message-box__header {
+  color: #333;
+  background: #f0f3f7;
+}
+.el-message-box .el-message-box__content {
+  padding: 38px 37px 23px 37px;
+  color: #1f2d3d;
+  font-size: 14px;
+}
+
+.el-dialog {
+  margin-bottom: 0 !important;
+}
+
+.v-modal {
+  opacity: 0.4 !important;
+}

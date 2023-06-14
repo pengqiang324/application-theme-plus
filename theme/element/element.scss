@@ -43,15 +43,13 @@ $padding-24: 24px;
         --el-fill-color-light: transparent;
         margin-right: 0;
         padding: 0;
+        line-height: 20px;
+        white-space: normal;
         &:focus,
         &:hover,
         &:active {
             color: $bg-hover-color;
         }
-    }
-
-    span {
-        line-height: 21px;
     }
 }
 
@@ -125,7 +123,7 @@ $padding-24: 24px;
     }
 
     .el-table__cell {
-        padding: 12px 12px;
+        padding: 12px 12px !important;
     }
 }
 
@@ -223,10 +221,6 @@ $padding-24: 24px;
     margin-bottom: 0 !important;
 }
 
-.el-pagination__sizes {
-    margin-right: 0;
-}
-
 .el-pager li {
     width: auto;
     padding: 0 6px;
@@ -237,8 +231,8 @@ $padding-24: 24px;
     margin: 0;
     line-height: 24px;
 
-    &.active {
-        border: 1px solid $bg-hover-color;
+    &.is-active {
+        border: 1px solid $bg-hover-color !important;
         border-radius: 2px;
     }
 
