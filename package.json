@@ -12,7 +12,7 @@
     "prepare": "husky install",
     "cz": "git add . && git-cz",
     "release": "release-it",
-    "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0 -n ./changelog-option.js"
+    "changelog": "conventional-changelog -p custom -i CHANGELOG.md -s -r 0 -n ./changelog-option.js"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.6",
