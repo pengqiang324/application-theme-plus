@@ -1,3 +1,12 @@
+
+
+## [1.2.10](https://github.com/pengqiang324/application-theme-plus/compare/1.2.9...1.2.10) (2023-06-15)
+
+
+### 🐛 Bug Fixes
+
+* **修复bug:** 🧩 去掉 console ([e906e1b](https://github.com/pengqiang324/application-theme-plus/commit/e906e1b)) by: **pengqiang324** (839556387@qq.com)
+
 ## [1.2.9](https://github.com/pengqiang324/application-theme-plus/compare/f7ca970...1.2.9) (2023-06-15)
 
 
@@ -18,6 +27,3 @@
 * **修复bug:** 🧩 修复第一个bug ([e75b80f](https://github.com/pengqiang324/application-theme-plus/commit/e75b80f)) by: **pengqiang324** (839556387@qq.com), closes [#1](https://github.com/pengqiang324/application-theme-plus/issues/1)
 * **修复bug:** 🧩 修复bug ([435dbb8](https://github.com/pengqiang324/application-theme-plus/commit/435dbb8)) by: **pengqiang324** (839556387@qq.com)
 * **custom1:** 🧩 修改程序 ([8cd583c](https://github.com/pengqiang324/application-theme-plus/commit/8cd583c)) by: **pengqiang324** (839556387@qq.com)
-
-
-
