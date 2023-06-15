@@ -11,7 +11,7 @@
     "lib": "vue-cli-service build  --target lib --name theme-plus --dest lib packages/index.js",
     "prepare": "husky install",
     "cz": "git add . && git-cz",
-    "release": "release-it --only-version",
+    "release": "release-it --cli",
     "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0 -n ./changelog-option.js"
   },
   "dependencies": {
