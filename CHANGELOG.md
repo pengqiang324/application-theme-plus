@@ -1,5 +1,12 @@
 
 
+# [1.3.0](https://github.com/pengqiang324/application-theme-plus/compare/1.2.10...1.3.0) (2023-06-15)
+
+
+### ✨ Features
+
+* **cli自动化:** 🚀 自动化集成 ([2c538ce](https://github.com/pengqiang324/application-theme-plus/commit/2c538ce)) by: **pengqiang324**
+
 ## [1.2.10](https://github.com/pengqiang324/application-theme-plus/compare/1.2.9...1.2.10) (2023-06-15)
 
 
