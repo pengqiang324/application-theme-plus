@@ -1,5 +1,12 @@
 
 
+# [1.4.0](https://github.com/pengqiang324/application-theme-plus/compare/1.3.2...1.4.0) (2023-06-15)
+
+
+### ✨ Features
+
+* **ci集成:** 🚀 自动化功能 ([31b48f6](https://github.com/pengqiang324/application-theme-plus/commit/31b48f6)) by: **pengqiang324**
+
 ## [1.3.2](https://github.com/pengqiang324/application-theme-plus/compare/1.3.0...1.3.2) (2023-06-15)
 
 
