@@ -1,7 +1,8 @@
-import zBaseSetting from './src/BaseSetting.vue';
- 
+import zBaseSetting from "./src/BaseSetting.vue";
+
 zBaseSetting.install = (Vue) => {
-  Vue.component(zBaseSetting.name,zBaseSetting)
-}
- 
+  console.log(1);
+  Vue.component(zBaseSetting.name, zBaseSetting);
+};
+
 export default zBaseSetting;
