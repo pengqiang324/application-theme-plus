@@ -1,5 +1,13 @@
 
 
+## [1.3.2](https://github.com/pengqiang324/application-theme-plus/compare/1.3.0...1.3.2) (2023-06-15)
+
+
+### 🐛 Bug Fixes
+
+* **修复bug:** 🧩 修改 cli 集成配置 ([cbad0c1](https://github.com/pengqiang324/application-theme-plus/commit/cbad0c1)) by: **pengqiang324**
+* **修复bug:** 🧩 修改 cli 集成配置 ([21c063a](https://github.com/pengqiang324/application-theme-plus/commit/21c063a)) by: **pengqiang324**
+
 ## [1.3.1](https://github.com/pengqiang324/application-theme-plus/compare/1.3.0...1.3.1) (2023-06-15)
 
 
