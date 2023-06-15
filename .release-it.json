@@ -10,6 +10,14 @@
     },
     "npm": {
       "publish": false
+    },
+    "plugins": {
+        "@release-it/conventional-changelog": {
+          "preset": "custom-config",
+          "infile": "CHANGELOG.md",
+          "release-count": 0,
+          "config": "changelog-option.js"
+        }
     }
   }
   

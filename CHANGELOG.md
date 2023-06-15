@@ -1,4 +1,4 @@
-## 1.2.8 (2023-06-15)
+## [1.2.9](https://github.com/pengqiang324/application-theme-plus/compare/f7ca970...1.2.9) (2023-06-15)
 
 
 ### ✨ Features | 新功能
