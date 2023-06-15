@@ -41,7 +41,7 @@ module.exports = {
       confirmCommit: "是否提交或修改commit ?",
     },
     types: [
-      { value: "feat", name: "feat:  新增功能", emoji: "🚀" },
+      { value: "feat", name: "feat:  新增功能", emoji: "✨" },
       { value: "fix", name: "fix:  修复缺陷", emoji: "🧩" },
       { value: "docs", name: "docs:  文档变更", emoji: "📚" },
       {
@@ -61,7 +61,7 @@ module.exports = {
         emoji: "✅",
       },
       { value: "revert", name: "revert:  回滚 commit", emoji: "⏪️" },
-      { value: "build", name: "build:  项目打包发布", emoji: " 📦️" },
+      { value: "build", name: "build:  项目打包发布", emoji: " 🚀" },
       {
         value: "chore",
         name: "chore:  对构建过程或辅助工具和库的更改（不影响源文件、测试用例）",
@@ -83,6 +83,7 @@ module.exports = {
     breaklineChar: "|",
     skipQuestions: ["body", "breaking"],
     issuePrefixs: [
+      { value: "wip", name: "wip:      将任务状态更改为进行中" },
       { value: "closed", name: "closed:   ISSUES has been processed" },
     ],
     customIssuePrefixsAlign: "top",
