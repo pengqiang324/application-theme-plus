@@ -1,9 +1,10 @@
-## 1.2.7 (2023-06-14)
+## 1.2.8 (2023-06-15)
 
 
 ### ✨ Features | 新功能
 
 * 🚀 测试中 ([fd0a55c](https://github.com/pengqiang324/application-theme-plus/commit/fd0a55c)) by: **pengqiang324** (839556387@qq.com)
+* **测试:** 🚀 测试日志管理 ([0f2f49c](https://github.com/pengqiang324/application-theme-plus/commit/0f2f49c)) by: **pengqiang324** (839556387@qq.com)
 * **配置文件:** 🚀 反复测试 ([dea4982](https://github.com/pengqiang324/application-theme-plus/commit/dea4982)) by: **pengqiang324** (839556387@qq.com)
 * **配置文件:** 🚀 修改配置文件 .commitlintrc.js ([69628d4](https://github.com/pengqiang324/application-theme-plus/commit/69628d4)) by: **pengqiang324** (839556387@qq.com)
 * **配置文件:** 🚀 修改修改 ([aee5645](https://github.com/pengqiang324/application-theme-plus/commit/aee5645)) by: **pengqiang324** (839556387@qq.com)
