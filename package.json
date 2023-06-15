@@ -10,8 +10,9 @@
     "style": "npx sass --style compressed theme/element/element.scss theme/element.css",
     "lib": "vue-cli-service build  --target lib --name theme-plus --dest lib packages/index.js",
     "prepare": "husky install",
-    "cz": "git add . && git-cz",
+    "cz": "git-cz",
     "release": "release-it --only-version",
+    "ai": "czg ai -N=5",
     "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0 -n ./changelog-option.js"
   },
   "dependencies": {
