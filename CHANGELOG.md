@@ -1,5 +1,12 @@
 
 
+## [1.3.1](https://github.com/pengqiang324/application-theme-plus/compare/1.3.0...1.3.1) (2023-06-15)
+
+
+### 🐛 Bug Fixes
+
+* **修复bug:** 🧩 修改 cli 集成配置 ([21c063a](https://github.com/pengqiang324/application-theme-plus/commit/21c063a)) by: **pengqiang324**
+
 # [1.3.0](https://github.com/pengqiang324/application-theme-plus/compare/1.2.10...1.3.0) (2023-06-15)
 
 
