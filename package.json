@@ -11,7 +11,7 @@
     "lib": "vue-cli-service build  --target lib --name theme-plus --dest lib packages/index.js",
     "prepare": "husky install",
     "cz": "git add . && git-cz",
-    "release": "release-it",
+    "release": "release-it --only-version",
     "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0 -n ./changelog-option.js"
   },
   "dependencies": {
@@ -67,7 +67,7 @@
     "bugsUrl": "https://github.com/pengqiang324/application-theme-plus/issues/",
     "emojis": true,
     "authorName": true,
-    "authorEmail": true
+    "authorEmail": false
   },
   "eslintConfig": {
     "root": true,
