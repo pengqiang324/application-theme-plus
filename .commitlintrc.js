@@ -83,7 +83,6 @@ module.exports = {
     breaklineChar: "|",
     skipQuestions: ["body", "breaking"],
     issuePrefixs: [
-      { value: "wip", name: "wip:      将任务状态更改为进行中" },
       { value: "closed", name: "closed:   ISSUES has been processed" },
     ],
     customIssuePrefixsAlign: "top",
