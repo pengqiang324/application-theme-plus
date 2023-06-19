@@ -1,5 +1,12 @@
 
 
+### [1.6.6](https://github.com/pengqiang324/application-theme-plus/compare/1.6.5...1.6.6) (2023-06-19)
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* **业务功能:** 🧩 格式化代码 ([3689e16](https://github.com/pengqiang324/application-theme-plus/commit/3689e164986bd417847beefcd3586e4a667f0edc))
+
 ## [1.6.5](https://github.com/pengqiang324/application-theme-plus/compare/1.6.4...1.6.5) (2023-06-19)
 
 
