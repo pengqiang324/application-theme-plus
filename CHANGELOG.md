@@ -1,5 +1,12 @@
 
 
+## [1.6.0](https://github.com/pengqiang324/application-theme-plus/compare/1.5.0...1.6.0) (2023-06-19)
+
+
+### ✨ Features
+
+* **业务功能:** ✨ 新增 eslint 功能 ([9631ee5](https://github.com/pengqiang324/application-theme-plus/commit/9631ee5c89873406c175a4dbbc6e028727395fde))
+
 # [1.5.0](https://github.com/pengqiang324/application-theme-plus/compare/1.4.0...1.5.0) (2023-06-19)
 
 
