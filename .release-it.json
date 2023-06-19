@@ -17,19 +17,9 @@
     "plugins": {
         "@release-it/conventional-changelog": {
             "infile": "CHANGELOG.md",
-            "preset": {
-                "name": "conventionalcommits",
-                "types": [
-                    {
-                        "type": "feat",
-                        "section": "✨ Features"
-                    },
-                    {
-                        "type": "fix",
-                        "section": "🐛 Bug Fixes"
-                    }
-                ]
-            }
+            "preset": "custom-config",
+            "release-count": 0,
+            "config": "./changelog-option.js"
         }
     }
 }
