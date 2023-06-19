@@ -1,5 +1,17 @@
 
 
+## [1.6.1](https://github.com/pengqiang324/application-theme-plus/compare/1.6.0...1.6.1) (2023-06-19)
+
+
+### 🐛 Bug Fixes
+
+* **优化:** 🧩 代码优化 ([c138dbe](https://github.com/pengqiang324/application-theme-plus/commit/c138dbe)) by: **pengqiang324**
+
+
+### 📝 Documentation
+
+* **优化:** 📚 优化 ([ee2d348](https://github.com/pengqiang324/application-theme-plus/commit/ee2d348)) by: **pengqiang324**
+
 ## [1.6.0](https://github.com/pengqiang324/application-theme-plus/compare/1.5.0...1.6.0) (2023-06-19)
 
 
