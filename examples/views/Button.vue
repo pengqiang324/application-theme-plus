@@ -3,11 +3,9 @@
 </template>
 
 <script>
-
 export default {
     name: 'm-button'
-}
+};
 </script>
 
-<style>
-</style>
+<style></style>
