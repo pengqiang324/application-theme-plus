@@ -1,5 +1,14 @@
 
 
+## [1.6.7](https://github.com/pengqiang324/application-theme-plus/compare/1.6.6...1.6.7) (2023-06-19)
+
+
+### 🐛 Bug Fixes
+
+* **业务功能:** 🧩 11 ([aa04e73](https://github.com/pengqiang324/application-theme-plus/commit/aa04e73)) by: **pengqiang324**
+* **业务功能:** 🧩 优化 ([23f36c4](https://github.com/pengqiang324/application-theme-plus/commit/23f36c4)) by: **pengqiang324**
+* **优化:** 🧩 优化 ([12cd19f](https://github.com/pengqiang324/application-theme-plus/commit/12cd19f)) by: **pengqiang324**
+
 ### [1.6.6](https://github.com/pengqiang324/application-theme-plus/compare/1.6.5...1.6.6) (2023-06-19)
 
 
