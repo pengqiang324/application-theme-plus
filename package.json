@@ -1,6 +1,6 @@
 {
     "name": "application-theme-plus",
-    "version": "1.6.9",
+    "version": "1.6.10",
     "private": false,
     "main": "lib/theme-plus.umd.min.js",
     "scripts": {

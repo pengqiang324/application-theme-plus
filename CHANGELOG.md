@@ -1,3 +1,14 @@
+
+
+### [1.6.10](https://github.com/pengqiang324/application-theme-plus/compare/1.6.9...1.6.10) (2023-06-19)
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* **业务功能:** 🧩 修复bug ([1bc9d3d](https://github.com/pengqiang324/application-theme-plus/commit/1bc9d3d475b4ab3c0a40c9dee7218a7a71480e47))
+* **优化:** 🧩 配置文件修改 ([68ad8ac](https://github.com/pengqiang324/application-theme-plus/commit/68ad8ac605a205515563e2ae6f54b7c19181b6c5))
+* **优化:** 🧩 配置优化 ([ba5c71c](https://github.com/pengqiang324/application-theme-plus/commit/ba5c71c84ce6d58a46e9819a615dc3d67dd6d0e8))
+
 ## [1.6.9](https://github.com/pengqiang324/application-theme-plus/compare/1.6.8...1.6.9) (2023-06-19)
 
 
@@ -165,6 +176,3 @@
 * **修复bug:** 🧩 修复第一个bug ([e75b80f](https://github.com/pengqiang324/application-theme-plus/commit/e75b80f)) by: **pengqiang324**, closes [#1](https://github.com/pengqiang324/application-theme-plus/issues/1)
 * **修复bug:** 🧩 修复bug ([435dbb8](https://github.com/pengqiang324/application-theme-plus/commit/435dbb8)) by: **pengqiang324**
 * **custom1:** 🧩 修改程序 ([8cd583c](https://github.com/pengqiang324/application-theme-plus/commit/8cd583c)) by: **pengqiang324**
-
-
-
