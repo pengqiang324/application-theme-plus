@@ -1,26 +1,35 @@
 {
     "git": {
-      "commitMessage": "chore: release v${version}",
-      "commit": true,
-      "tag": true,
-      "push": true
+        "commitMessage": "chore: release v${version}",
+        "commit": true,
+        "tag": true,
+        "push": true
     },
     "github": {
-      "release": true
+        "release": true
     },
     "npm": {
-      "publish": false
+        "publish": false
     },
     "hooks": {
         "after:bump": "echo 更新版本成功"
     },
     "plugins": {
         "@release-it/conventional-changelog": {
-          "preset": "custom-config",
-          "infile": "CHANGELOG.md",
-          "release-count": 0,
-          "config": "changelog-option.js"
+            "infile": "CHANGELOG.md",
+            "preset": {
+                "name": "conventionalcommits",
+                "types": [
+                    {
+                        "type": "feat",
+                        "section": "✨ Features"
+                    },
+                    {
+                        "type": "fix",
+                        "section": "🐛 Bug Fixes"
+                    }
+                ]
+            }
         }
     }
-  }
-  
+}
