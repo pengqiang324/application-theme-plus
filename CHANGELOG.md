@@ -1,5 +1,17 @@
 
 
+## [1.6.9](https://github.com/pengqiang324/application-theme-plus/compare/1.6.8...1.6.9) (2023-06-19)
+
+
+### 🐛 Bug Fixes
+
+* **业务功能:** 🧩 修复 ([bd8bf38](https://github.com/pengqiang324/application-theme-plus/commit/bd8bf38)) by: **pengqiang324**
+
+
+### 💄 Styles
+
+* **业务功能:** 🎨 123 ([aa12a54](https://github.com/pengqiang324/application-theme-plus/commit/aa12a54)) by: **pengqiang324**
+
 ## [1.6.8](https://github.com/pengqiang324/application-theme-plus/compare/1.6.7...1.6.8) (2023-06-19)
 
 
