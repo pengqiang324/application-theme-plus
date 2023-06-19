@@ -1,92 +1,82 @@
 {
-  "name": "application-theme-plus",
-  "version": "1.4.0",
-  "private": false,
-  "main": "lib/theme-plus.umd.min.js",
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "style": "npx sass --style compressed theme/element/element.scss theme/element.css",
-    "lib": "vue-cli-service build  --target lib --name theme-plus --dest lib packages/index.js",
-    "prepare": "husky install",
-    "cz": "git-cz",
-    "release": "release-it --only-version",
-    "cz-ai": "czg ai -N=5",
-    "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0 -n ./changelog-option.js"
-  },
-  "dependencies": {
-    "@element-plus/icons-vue": "^2.0.6",
-    "core-js": "^3.8.3",
-    "element-plus": "^2.2.2",
-    "pinia": "^2.0.17",
-    "vue": "^3.2.37",
-    "vue-router": "^4.0.13"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
-    "@commitlint/cli": "^17.6.5",
-    "@commitlint/config-conventional": "^17.6.5",
-    "@release-it/conventional-changelog": "^5.1.1",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "commitizen": "^4.3.0",
-    "conventional-changelog-cli": "^3.0.0",
-    "conventional-changelog-custom-config": "^0.3.1",
-    "cz-git": "^1.6.1",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.2",
-    "node-sass": "^7.0.1",
-    "release-it": "^15.11.0",
-    "sass-loader": "^13.0.2",
-    "unplugin-auto-import": "^0.11.1",
-    "unplugin-element-plus": "^0.4.1",
-    "unplugin-vue-components": "^0.22.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-git"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.vue": [
-      "eslint --fix",
-      "prettier --write"
+    "name": "application-theme-plus",
+    "version": "1.4.0",
+    "private": false,
+    "main": "lib/theme-plus.umd.min.js",
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint",
+        "style": "npx sass --style compressed theme/element/element.scss theme/element.css",
+        "lib": "vue-cli-service build  --target lib --name theme-plus --dest lib packages/index.js",
+        "prepare": "husky install",
+        "cz": "git-cz",
+        "release": "release-it --only-version",
+        "cz-ai": "czg ai -N=5",
+        "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0 -n ./changelog-option.js"
+    },
+    "dependencies": {
+        "@element-plus/icons-vue": "^2.0.6",
+        "core-js": "^3.8.3",
+        "element-plus": "^2.2.2",
+        "pinia": "^2.0.17",
+        "vue": "^3.2.37",
+        "vue-router": "^4.0.13"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.16",
+        "@babel/eslint-parser": "^7.12.16",
+        "@commitlint/cli": "^17.6.5",
+        "@commitlint/config-conventional": "^17.6.5",
+        "@release-it/conventional-changelog": "^5.1.1",
+        "@vue/cli-plugin-babel": "~5.0.0",
+        "@vue/cli-plugin-eslint": "~5.0.0",
+        "@vue/cli-service": "~5.0.0",
+        "commitizen": "^4.3.0",
+        "conventional-changelog-cli": "^3.0.0",
+        "conventional-changelog-custom-config": "^0.3.1",
+        "cz-git": "^1.6.1",
+        "eslint": "^8.42.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-define-config": "^1.20.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-vue": "^9.14.1",
+        "extract-text-webpack-plugin": "^3.0.2",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.2",
+        "node-sass": "^7.0.1",
+        "prettier": "^2.8.8",
+        "release-it": "^15.11.0",
+        "sass-loader": "^13.0.2",
+        "unplugin-auto-import": "^0.11.1",
+        "unplugin-element-plus": "^0.4.1",
+        "unplugin-vue-components": "^0.22.0"
+    },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-git"
+        }
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.vue": [
+            "eslint --fix",
+            "prettier --write"
+        ]
+    },
+    "changelog": {
+        "bugsUrl": "https://github.com/pengqiang324/application-theme-plus/issues/",
+        "emojis": true,
+        "authorName": true,
+        "authorEmail": false
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead",
+        "not ie 11"
     ]
-  },
-  "changelog": {
-    "bugsUrl": "https://github.com/pengqiang324/application-theme-plus/issues/",
-    "emojis": true,
-    "authorName": true,
-    "authorEmail": false
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ]
 }
