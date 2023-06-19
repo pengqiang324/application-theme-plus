@@ -1,5 +1,26 @@
 
 
+# [1.5.0](https://github.com/pengqiang324/application-theme-plus/compare/1.4.0...1.5.0) (2023-06-19)
+
+
+### ✨ Features
+
+* **优化:** ✨ 优化配置 ([fbf1997](https://github.com/pengqiang324/application-theme-plus/commit/fbf1997)) by: **pengqiang324**
+* **app:** ✨ 优化 ([04fdf12](https://github.com/pengqiang324/application-theme-plus/commit/04fdf12)) by: **pengqiang324**
+
+
+### 🐛 Bug Fixes
+
+* **修复:** 🧩 修复功能 ([c988825](https://github.com/pengqiang324/application-theme-plus/commit/c988825)) by: **pengqiang324**
+* **修复bug:** 🧩 关闭bug[[#2](https://github.com/pengqiang324/application-theme-plus/issues/2)] ([229f2d8](https://github.com/pengqiang324/application-theme-plus/commit/229f2d8)) by: **pengqiang324**
+* **修复bug:** 🧩 修复[[#2](https://github.com/pengqiang324/application-theme-plus/issues/2)] ([8aee43d](https://github.com/pengqiang324/application-theme-plus/commit/8aee43d)) by: **pengqiang324**
+* **业务功能:** 🧩 修复遗留bug ([c92e15b](https://github.com/pengqiang324/application-theme-plus/commit/c92e15b)) by: **pengqiang324**
+
+
+### 📝 Documentation
+
+* **优化:** 📚 文档修改 ([01e26c6](https://github.com/pengqiang324/application-theme-plus/commit/01e26c6)) by: **pengqiang324**
+
 # [1.4.0](https://github.com/pengqiang324/application-theme-plus/compare/1.3.2...1.4.0) (2023-06-15)
 
 
