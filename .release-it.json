@@ -20,7 +20,7 @@
             "preset": "custom-config",
             "releaseCount": 0,
             "config": {
-                "myOptions": "./my-options.js"
+                "changelogOption": "./changelog-option.js"
             }
         }
     }
