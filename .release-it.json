@@ -17,11 +17,20 @@
     "plugins": {
         "@release-it/conventional-changelog": {
             "infile": "CHANGELOG.md",
-            "preset": "custom-config",
-            "releaseCount": 0,
-            "config": {
-                "changelogOption": "./changelog-option.js"
-            }
+            "preset": {
+                "name": "conventionalcommits",
+                "types": [
+                    {
+                        "type": "feat",
+                        "section": "✨ Features | 新功能"
+                    },
+                    {
+                        "type": "fix",
+                        "section": "🐛 Bug Fixes | Bug 修复"
+                    }
+                ]
+            },
+            "releaseCount": 0
         }
     }
 }
