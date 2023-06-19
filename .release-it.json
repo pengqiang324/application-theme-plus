@@ -18,7 +18,7 @@
         "@release-it/conventional-changelog": {
             "infile": "CHANGELOG.md",
             "preset": {
-                "name": "custom-config",
+                "name": "conventionalcommits",
                 "types": [
                     { "type": "feat", "section": "✨ Features | 新功能" },
                     { "type": "fix", "section": "🐛 Bug Fixes | Bug 修复" },
