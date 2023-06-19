@@ -7,8 +7,7 @@
 <script>
 export default {
     name: 'm-home'
-}
+};
 </script>
 
-<style>
-</style>
+<style></style>
