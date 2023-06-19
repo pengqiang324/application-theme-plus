@@ -1,28 +1,36 @@
 <template>
-<el-row>
-    <el-col 
-    :span="24"
-    :style="{'min-height': startMinHeight ? minHeight : ''}" 
-    :class="['content-box', {'content-box-min-height': startMinHeight, 'content-box-no-padding': noPadding}]">
-        <slot name="tabs"></slot>
-        <slot name="tool"></slot>
-        <slot name="selection"></slot>
-        <div class="content-table-box">
-            <div :class="{'content-table-list': loading}">
-                <slot></slot>
+    <el-row>
+        <el-col
+            :span="24"
+            :style="{ 'min-height': startMinHeight ? minHeight : '' }"
+            :class="[
+                'content-box',
+                {
+                    'content-box-min-height': startMinHeight,
+                    'content-box-no-padding': noPadding
+                }
+            ]"
+        >
+            <slot name="tabs"></slot>
+            <slot name="tool"></slot>
+            <slot name="selection"></slot>
+            <div class="content-table-box">
+                <div :class="{ 'content-table-list': loading }">
+                    <slot></slot>
+                </div>
+                <div v-if="loading" class="spin-box">
+                    <Spin />
+                </div>
             </div>
-            <div v-if="loading" class="spin-box">
-                <Spin />
-            </div>
-        </div>
-    </el-col>
-</el-row>
+        </el-col>
+    </el-row>
 </template>
 
 <script>
-import Spin from '../../Spin'
+import Spin from '../../Spin';
 export default {
-    name: 'Content',
+    // eslint-disable-next-line vue/multi-word-component-names
+    name: 'ContentBox',
     components: {
         Spin
     },
@@ -44,10 +52,10 @@ export default {
             default: false
         }
     }
-}
+};
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .content-box {
     padding: 24px;
     background: #fff;
@@ -58,7 +66,7 @@ export default {
 .content-table-box {
     position: relative;
     .content-table-list {
-        opacity: .3;
+        opacity: 0.3;
     }
     .el-table__header,
     .el-table__body {
@@ -66,7 +74,7 @@ export default {
     }
 }
 .content-box-min-height {
-    .el-dialog__wrapper{
+    .el-dialog__wrapper {
         overflow: hidden;
     }
     .el-dialog__body {
