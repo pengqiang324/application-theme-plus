@@ -1,8 +1,8 @@
 $default-line-height-base: 20px;
 $padding-base: 12px;
 $boder-radius-base: 2px;
-$primary-color: #1890FF;
-$row-hover-color: #E6F7FF;
+$primary-color: #1890ff;
+$row-hover-color: #e6f7ff;
 $select-font-color: #595959;
 $select-font-color-selected: #575757;
 $margin-padding-distance: 8px;
@@ -15,12 +15,14 @@ $input-height: 32px;
 $padding-24: 24px;
 
 :root {
-    --el-overlay-color-lighter: rgba(0,0,0,.4);
+    --el-overlay-color-lighter: rgb(0 0 0 / 40%);
 }
+
 /* Button */
 .el-button {
-    --el-color-primary: #1890FF;
+    --el-color-primary: #1890ff;
     --el-border-radius-base: $boder-radius-base;
+
     margin-right: $margin-padding-distance;
 
     &.el-button--default:hover,
@@ -32,7 +34,7 @@ $padding-24: 24px;
 
     &.el-button--primary:hover,
     &.el-button--primary:focus {
-        color: #FFF;
+        color: #fff;
         background: $bg-hover-color;
         border-color: $bg-hover-color;
     }
@@ -41,10 +43,12 @@ $padding-24: 24px;
     &.is-link {
         --el-fill-color: transparent;
         --el-fill-color-light: transparent;
-        margin-right: 0;
+
         padding: 0;
+        margin-right: 0;
         line-height: 20px;
         white-space: normal;
+
         &:focus,
         &:hover,
         &:active {
@@ -53,7 +57,7 @@ $padding-24: 24px;
     }
 }
 
-.el-button+.el-button {
+.el-button + .el-button {
     margin-left: $margin-padding-distance;
 }
 
@@ -61,7 +65,7 @@ $padding-24: 24px;
 .el-button--primary.is-disabled:active,
 .el-button--primary.is-disabled:focus,
 .el-button--primary.is-disabled:hover {
-    color: rgba(0, 0, 0, 0.25);
+    color: rgb(0 0 0 / 25%);
     background-color: #f5f5f5;
     border-color: #d9d9d9;
 }
@@ -82,7 +86,7 @@ $padding-24: 24px;
 
 .el-form-item__label {
     padding-right: $margin-padding-distance;
-    color: rgba(0, 0, 0, .85);
+    color: rgb(0 0 0 / 85%);
 }
 
 .el-form--label-top {
@@ -110,7 +114,7 @@ $padding-24: 24px;
 /* Table */
 .el-table {
     thead {
-        color: rgba(0, 0, 0, 0.85);
+        color: rgb(0 0 0 / 85%);
     }
 
     .cell {
@@ -123,32 +127,26 @@ $padding-24: 24px;
     }
 
     .el-table__cell {
-        padding: 12px 12px !important;
+        padding: 12px !important;
     }
 }
 
-.el-table th.el-table__cell>.cell {
+.el-table th.el-table__cell > .cell {
     padding: 0 $padding-base;
 }
 
 /* Table */
 
-
 /* Input */
 .el-input {
     --el-border-radius-base: $boder-radius-base;
 }
+
 .el-input__inner {
-    line-height: $input-height;
     height: $input-height;
+    line-height: $input-height;
     border-radius: $boder-radius-base;
 }
-
-// .el-input__inner:focus,
-// .el-input__inner:hover {
-//     border-color: $bg-hover-color;
-//     box-shadow: 0 0 0 1px rgba(24,144,255, 20%);
-// }
 
 .el-input__suffix {
     color: #52c41a;
@@ -176,9 +174,11 @@ $padding-24: 24px;
 .el-range-editor.el-input__wrapper {
     padding: 0 10px;
 }
+
 .el-date-editor {
     --el-border-radius-base: $boder-radius-base;
 }
+
 .el-date-editor .el-range-separator {
     display: flex;
     align-items: center;
@@ -216,20 +216,20 @@ $padding-24: 24px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    text-align: right;
-    padding: $padding-top-bottom-base 0 $padding-top-bottom-base  !important;
+    padding: $padding-top-bottom-base 0 $padding-top-bottom-base !important;
     margin-bottom: 0 !important;
+    text-align: right;
 }
 
 .el-pager li {
     width: auto;
-    padding: 0 6px;
-    font-weight: 100;
-    color: rgba(0, 0, 0, 0.65);
     min-width: 24px;
     height: 24px;
+    padding: 0 6px;
     margin: 0;
+    font-weight: 100;
     line-height: 24px;
+    color: rgb(0 0 0 / 65%);
 
     &.is-active {
         border: 1px solid $bg-hover-color !important;
@@ -252,7 +252,7 @@ $padding-24: 24px;
 
 .dialog-width-500 {
     .el-dialog {
-        width: $dialog-width-500  !important;
+        width: $dialog-width-500 !important;
     }
 }
 
@@ -282,8 +282,8 @@ $padding-24: 24px;
 /* Dropdown */
 .el-dropdown-menu {
     padding: 4px 0;
-    border-radius: 2px;
     margin: 0;
+    border-radius: 2px;
 }
 
 .el-dropdown-menu__item {
@@ -306,14 +306,14 @@ $padding-24: 24px;
     box-shadow: none;
 }
 
-.el-tabs--card>.el-tabs__header {
+.el-tabs--card > .el-tabs__header {
     .el-tabs__nav {
         border: none;
     }
 
     .el-tabs__item {
-        border: 1px solid #e4e7ed;
         margin-right: 2px;
+        border: 1px solid #e4e7ed;
         border-radius: 4px 4px 0 0;
 
         &:first-child {
@@ -326,11 +326,11 @@ $padding-24: 24px;
 
 /* Popconfirm */
 .el-popover.el-popper {
+    box-sizing: border-box;
     min-width: 160px;
     padding: 12px 16px;
     border-radius: 2px;
-    box-sizing: border-box;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 15%);
 
     .el-popconfirm__main {
         padding-bottom: 5px;
@@ -338,9 +338,9 @@ $padding-24: 24px;
 
     .el-button--small {
         padding: 4px 4px 4px 7px;
-        border-radius: 2px;
         font-size: 14px;
         letter-spacing: 3px;
+        border-radius: 2px;
     }
 
     .el-popconfirm__icon {

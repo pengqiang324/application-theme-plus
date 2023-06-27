@@ -10,13 +10,15 @@ module.exports = {
         'prettier',
         'plugin:prettier/recommended',
         'plugin:diylint/recommended'
+        // 'qszr'
     ],
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module'
     },
-    plugins: ['vue', 'diylint']
-    // rules: {
-    //     'diylint/no-console-error': 2
-    // }
+    plugins: ['diylint', 'vue'],
+    rules: {
+        // 'diylint/no-console-error': 2
+        eqeqeq: [2, 'always', { null: 'ignore' }]
+    }
 };

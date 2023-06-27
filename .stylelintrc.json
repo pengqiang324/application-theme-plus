@@ -1,0 +1,26 @@
+{
+    "root": true,
+    "plugins": ["stylelint-scss"],
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-recess-order",
+        "stylelint-config-recommended-vue"
+    ],
+    "overrides": [
+        {
+            "files": ["**/*.vue"],
+            "customSyntax": "postcss-html"
+        },
+        {
+            "files": ["**/*.scss"],
+            "customSyntax": "postcss-scss"
+        }
+    ],
+    "rules": {
+        "function-url-quotes": null,
+        "no-descending-specificity": null,
+        "no-empty-source": null,
+        "selector-class-pattern": null
+    },
+    "ignoreFiles": ["theme/element.css"]
+}

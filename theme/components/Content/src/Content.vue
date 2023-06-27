@@ -59,39 +59,46 @@ export default {
 .content-box {
     padding: 24px;
     background: #fff;
+
     .content-box-no-padding {
         padding: 0;
     }
 }
+
 .content-table-box {
     position: relative;
+
     .content-table-list {
         opacity: 0.3;
     }
+
     .el-table__header,
     .el-table__body {
         width: 100% !important;
     }
 }
+
 .content-box-min-height {
     .el-dialog__wrapper {
         overflow: hidden;
     }
+
     .el-dialog__body {
+        box-sizing: border-box;
         max-height: 390px;
         overflow-y: auto;
-        box-sizing: border-box;
     }
 }
+
 .spin-box {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    max-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
 }
 </style>

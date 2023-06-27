@@ -9,23 +9,23 @@
 </template>
 
 <script>
-import NoFound from '../../NoFound'
+import NoFound from '../../NoFound';
 export default {
     name: 'NoFind',
     components: {
         NoFound
     }
-}
+};
 </script>
 
 <style lang="scss" scoped>
 .wscn-http404-container {
-    transform: translate(-50%, -50%);
     position: absolute;
     top: 40%;
     left: 50%;
     display: flex;
     align-items: center;
+    transform: translate(-50%, -50%);
 }
 
 .wscn-noFind {
@@ -33,9 +33,9 @@ export default {
     top: 12px;
 
     .wscn-noFind-title {
+        padding: 30px 0 10px;
         font-size: 30px;
         text-align: center;
-        padding: 30px 0 10px;
     }
 
     .wscn-noFind-text {

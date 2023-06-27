@@ -6,16 +6,16 @@
 </template>
 
 <script>
-import Empty from '../../Empty'
+import Empty from '../../Empty';
 export default {
     name: 'DefaultEmpty',
     components: {
         Empty
     }
-}
+};
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .empty {
     margin: 48px 0;
     font-size: 14px;
@@ -23,7 +23,7 @@ export default {
     text-align: center;
 
     .empty-text {
-        color: rgba(0, 0, 0, 0.25);
+        color: rgb(0 0 0 / 25%);
     }
 }
 </style>

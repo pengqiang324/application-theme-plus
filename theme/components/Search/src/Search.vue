@@ -1,64 +1,64 @@
 <template>
-  <div ref="searchBox" v-if="show" class="search-box">
-    <slot></slot>
-  </div>
+    <div ref="searchBox" v-if="show" class="search-box">
+        <slot></slot>
+    </div>
 </template>
 
 <script>
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: "Search",
+    // eslint-disable-next-line vue/multi-word-component-names
+    name: 'Search',
 
-  data() {
-    return {
-      show: true,
-    };
-  },
+    data() {
+        return {
+            show: true
+        };
+    },
 
-  activated() {
-    this.show = true;
-  },
+    activated() {
+        this.show = true;
+    },
 
-  deactivated() {
-    setTimeout(() => {
-      this.show = false;
-    }, 280);
-  },
+    deactivated() {
+        setTimeout(() => {
+            this.show = false;
+        }, 280);
+    }
 };
 </script>
 
 <style lang="scss">
 .search-box {
-  margin-bottom: 10px !important;
-  padding: 24px 0 0 !important;
-  background: #fff !important;
+    padding: 24px 0 0 !important;
+    margin-bottom: 10px !important;
+    background: #fff !important;
 
-  .el-date-editor--datetimerange.el-input,
-  .el-date-editor--daterange.el-input__inner,
-  .el-date-editor--datetimerange.el-input__inner {
-    width: 100%;
-  }
+    .el-date-editor--datetimerange.el-input,
+    .el-date-editor--daterange.el-input__inner,
+    .el-date-editor--datetimerange.el-input__inner {
+        width: 100%;
+    }
 
-  .el-select {
-    display: block;
-    width: 100%;
-  }
+    .el-select {
+        display: block;
+        width: 100%;
+    }
 
-  .el-select__caret {
-    line-height: 40px;
-  }
+    .el-select__caret {
+        line-height: 40px;
+    }
 
-  .el-range__close-icon {
-    line-height: 24px;
-  }
+    .el-range__close-icon {
+        line-height: 24px;
+    }
 
-  .el-cascader {
-    display: block;
-  }
+    .el-cascader {
+        display: block;
+    }
 
-  [class*="el-col-"] {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
+    [class*='el-col-'] {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
 }
 </style>
